@@ -12,7 +12,7 @@ Parmis les autres distances intéressantes figuraient celles de :
 - Manhattan
 - Minkowski
 
-Nous avons alors obtenu une précision de 0.732 pour un test entre le dataset d'origine et **preTest.txt**.
+Nous avons alors obtenu une précision de 73,2% pour un test entre le dataset d'origine et **preTest.txt**.
 
 Ci-dessous, on peut voir l'évolution de la précision selon **k** ainsi que le dataset utilisé pour comparer les données. On utilise tout le temps **data.txt**, la précision est donc très bonne quand on applique le KNN avec ces mêmes données pour k=1.
 
