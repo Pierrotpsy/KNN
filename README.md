@@ -25,4 +25,4 @@ Le fichier **sklearnKNN** contient l'implémentation du KNN en utilisant la bibl
 
 Ci-dessous on peut voir la précision du modèle scikit selon le dataset utilisé et **k**
 
-![alt text](http://url/to/img.png)
+![No image](https://github.com/Pierrotpsy/KNN/blob/main/sklearnKNN.png)
