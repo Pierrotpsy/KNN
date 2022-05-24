@@ -18,3 +18,11 @@ Nous avons alors obtenu une précision de 0.732 pour un test entre le dataset d'
 
 Afin d'améliorer la précision de notre KNN, nous avons fait des recherches et déterminé qu'un preprocessing sur le dataset permettrait d'éliminer les "mauvais représentants" de chaque classe pour ne garder que les meilleurs, et ainsi améliorer la précision de l'algorithme final.
 Nous n'avons toutefois pas eu le temps de mettre en place l'algorithme d'undersampling ([Tomek links](https://towardsdatascience.com/imbalanced-classification-in-python-smote-tomek-links-method-6e48dfe69bbc)) .
+
+# Comparaison avec le KNN de scikit
+
+Le fichier **sklearnKNN** contient l'implémentation du KNN en utilisant la bibliothèque scikit. On obtient une précision maximale de 74%. Nous ne sommes donc pas très loin de la précision que nous avons obtenue qui est de 73,2%.
+
+Ci-dessous on peut voir la précision du modèle scikit selon le dataset utilisé et **k**
+
+![alt text](http://url/to/img.png)
