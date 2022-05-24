@@ -14,6 +14,10 @@ Parmis les autres distances intéressantes figuraient celles de :
 
 Nous avons alors obtenu une précision de 0.732 pour un test entre le dataset d'origine et **preTest.txt**.
 
+Ci-dessous, on peut voir l'évolution de la précision selon **k** ainsi que le dataset utilisé pour comparer les données. On utilise tout le temps **data.txt**, la précision est donc très bonne quand on applique le KNN avec ces mêmes données pour k=1.
+
+![No image](https://github.com/Pierrotpsy/KNN/blob/main/data/knn.png)
+
 # Idées d'amélioration
 
 Afin d'améliorer la précision de notre KNN, nous avons fait des recherches et déterminé qu'un preprocessing sur le dataset permettrait d'éliminer les "mauvais représentants" de chaque classe pour ne garder que les meilleurs, et ainsi améliorer la précision de l'algorithme final.
@@ -25,4 +29,4 @@ Le fichier **sklearnKNN** contient l'implémentation du KNN en utilisant la bibl
 
 Ci-dessous on peut voir la précision du modèle scikit selon le dataset utilisé et **k**
 
-![No image](https://github.com/Pierrotpsy/KNN/blob/main/sklearnKNN.png)
+![No image](https://github.com/Pierrotpsy/KNN/blob/main/data/sklearnKNN.png)
