@@ -17,3 +17,4 @@ Nous avons alors obtenu une précision de 0.732 pour un test entre le dataset d'
 # Idées d'amélioration
 
 Afin d'améliorer la précision de notre KNN, nous avons fait des recherches et déterminé qu'un preprocessing sur le dataset permettrait d'éliminer les "mauvais représentants" de chaque classe pour ne garder que les meilleurs, et ainsi améliorer la précision de l'algorithme final.
+Nous n'avons toutefois pas eu le temps de mettre en place d'undersampling.
