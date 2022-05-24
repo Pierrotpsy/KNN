@@ -4,6 +4,7 @@ import numpy as np
 from sklearn.metrics import confusion_matrix
 from math import *
 from scipy.spatial import distance
+import matplotlib.pyplot as plt
 
 def readData(file):
     rfile = open(file, "r")
@@ -90,13 +91,11 @@ if __name__ == '__main__' :
     preTest = formatData(readData("C:/Users/33769/Documents/Python Scripts/KNN/preTest.txt"))
     finalTest = formatTestData(readData("C:/Users/33769/Documents/Python Scripts/KNN/finalTest.txt"))
     
-    
-        
 
     #training
+    # k_n = np.arange(1, 50)
     
-    #dev, _, dev_class, _ = divideData(preTest, 1)
-    # k_n = [1, 3, 5, 9, 11, 13, 15, 17, 19, 21, 25, 27, 29, 31, 33, 35]
+    # dev, _, dev_class, _ = divideData(preTest, 1)
     # dev_set_k = {}
     
     # for k in k_n:
@@ -105,17 +104,46 @@ if __name__ == '__main__' :
     #         dev_set[i] = knn(dataset, dev[i][0:10], k)
             
     #     dev_set_k[k] = dev_set
-    #     #print(dev_set)
     
+    # ks = {k:0 for k in k_n} 
     # for k in k_n:
     #     count = 0
     #     for i in range(len(dev)):
     #         if(dev_set_k[k][i] == dev_class[i][0]):
     #             count += 1
         
-    #     print(k,' : ',count/len(dev))
+    #     ks[k] = count/len(dev)
+    
+    # plt.plot(ks.keys(), ks.values(), label = 'preTest dataset Accuracy')
+    
+    # dev, _, dev_class, _ = divideData(dataset, 1)
+    # dev_set_k = {}
+    
+    # for k in k_n:
+    #     dev_set = [None] * len(dev)
+    #     for i in range(len(dev)):
+    #         dev_set[i] = knn(dataset, dev[i][0:10], k)
+            
+    #     dev_set_k[k] = dev_set
+    
+    # ks = {k:0 for k in k_n} 
+    # for k in k_n:
+    #     count = 0
+    #     for i in range(len(dev)):
+    #         if(dev_set_k[k][i] == dev_class[i][0]):
+    #             count += 1
         
-    #Conclusion : best k = 21
+    #     ks[k] = count/len(dev)
+    
+    
+    # plt.plot(ks.keys(), ks.values(), label = 'data dataset Accuracy')
+    
+    # plt.legend()
+    # plt.xlabel('n_neighbors')
+    # plt.ylabel('Accuracy')
+    # plt.show()
+    
+    # Conclusion : best k = 21
     
     ###############################################
     
