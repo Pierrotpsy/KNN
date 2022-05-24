@@ -1,12 +1,9 @@
 from operator import itemgetter
 from random import shuffle
-from unittest import result
 import numpy as np
 from sklearn.metrics import confusion_matrix
 from math import *
-from decimal import Decimal
 from scipy.spatial import distance
-import os
 
 def readData(file):
     rfile = open(file, "r")
@@ -80,17 +77,6 @@ def knn(dataset, testInstance, k):
 def confusionMatrix(actu, pred):
     return confusion_matrix(actu, pred)
 
-def p_root(value, root):
-     
-    root_value = 1 / float(root)
-    return round (Decimal(value) **
-             Decimal(root_value), 3)
- 
-def minkowski_distance(x, y, p_value):
-     
-    return (p_root(sum(pow(abs(a-b), p_value)
-            for a, b in zip(x, y)), p_value))
-
 def outputFile(data):
     file = open("prediction.txt", "w+")
     for i in range(len(data)):
@@ -100,18 +86,18 @@ def outputFile(data):
     
 
 if __name__ == '__main__' :
-    k = 10
     dataset = formatData(readData("C:/Users/33769/Documents/Python Scripts/KNN/data.txt"))
     preTest = formatData(readData("C:/Users/33769/Documents/Python Scripts/KNN/preTest.txt"))
     finalTest = formatTestData(readData("C:/Users/33769/Documents/Python Scripts/KNN/finalTest.txt"))
     
-    dev, _, dev_class, _ = divideData(preTest, 1)
-    test, _, test_class, _ = divideData(preTest, 1)
+    
         
 
     #training
-    k_n = [1, 11, 13, 15, 17, 19, 21, 25, 29, 35, 45, 71, 101]
-    dev_set_k = {}
+    
+    #dev, _, dev_class, _ = divideData(preTest, 1)
+    # k_n = [1, 3, 5, 9, 11, 13, 15, 17, 19, 21, 25, 27, 29, 31, 33, 35]
+    # dev_set_k = {}
     
     # for k in k_n:
     #     dev_set = [None] * len(dev)
@@ -129,26 +115,35 @@ if __name__ == '__main__' :
         
     #     print(k,' : ',count/len(dev))
         
-    #testing
-    k = 21
-    # test_set = [None] * len(test)
-    # for i in range(len(test)):
-    #     test_set[i] = knn(dataset, test[i][0:10], k)
+    #Conclusion : best k = 21
     
+    ###############################################
+    
+    #testing
+    
+    # k = 21
+    # # test_set = [None] * len(test)
+    # # for i in range(len(test)):
+    # #     test_set[i] = knn(dataset, test[i][0:10], k)
+    
+    # # count = 0
+    # # for i,j in zip(test_class, test_set):
+    # #     if i[0] == j:
+    # #         count += 1
+    # #     else:
+    # #         pass
+        
+    # # print('Final Accuracy of the Test dataset is ', count/(len(test_class)))
+    
+    # # print(confusionMatrix([item[0] for item in test_class], test_set))
+    
+    ###############################################
+    
+    #predicting
+    
+    k = 21
     results = [None] * len(finalTest)
     for i in range(len(finalTest)):
-        results[i] = knn(dataset, finalTest[i][0:10], k)
-
-    # count = 0
-    # for i,j in zip(test_class, test_set):
-    #     if i[0] == j:
-    #         count += 1
-    #     else:
-    #         pass
-        
-    # print('Final Accuracy of the Test dataset is ', count/(len(test_class)))
-    
-    # print(confusionMatrix([item[0] for item in test_class], test_set))
-    
+        results[i] = knn(dataset, finalTest[i], k)
     outputFile(results)
     
